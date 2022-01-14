@@ -11,21 +11,24 @@ function MovieList(props) {
     return (
         <Row className="movies d-flex justify-content-center">
             {movies.map((movie, index) => (
-                <Card className="m-2" key={movie.id} style={{ width: '18rem', height: '35rem' }} >
+                <Card className="m-2" key={movie.id} style={{ width: '18rem', height: '40rem'}} >
                     <Card.Img variant="top" src={`${IMG_PATH}`+ movie.poster_path}  alt={movie.title} />
                     <Card.Body>
                         <Card.Title>{movie.title}</Card.Title>
-                        <Card.Text >
+                        <Card.Text style={{ height: '10rem', fontSize: '12px' }}>
                             {movie.overview}
                         </Card.Text>                        
                     </Card.Body>
-                    <Button variant="primary" style={{ width: '3rem', float:'right' }}>{movie.vote_average}</Button>
+                    <Card.Body>
+                    <Button variant="success" style={{ width: '3.1rem', float:'left',fontSize: '14px' }}>{movie.vote_average}</Button>
                     {/* <Button
                   className="desc-button"
                   onClick={() => addToDescription(movie)}
                 >
                   <Link to={`/description/${movie.id}`} className="desc-button">Descripton</Link>
                 </Button> */}
+                <Button variant="warning text-dark" style={{ width: '7rem', float:'right',fontSize: '14px' }}>Description</Button>
+                </Card.Body>
                 </Card>
             ))}
         </Row>

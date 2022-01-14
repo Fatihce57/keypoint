@@ -28,21 +28,21 @@ function App() {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-   fetch(SEARCH_API+searchTerm)
-   .then(res => res.json())
-   .then((data) => {
-     setMovies(data.results)
-   })
-  
+    fetch(SEARCH_API + searchTerm)
+      .then(res => res.json())
+      .then((data) => {
+        setMovies(data.results)
+      })
+
   }
 
-const handleOnChange=(e)=>{
-  setSearchTerm(e.target.value);
-}
+  const handleOnChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
 
-const addToDescription= (e) => {
-  
-}
+  const addToDescription = (e) => {
+
+  }
 
 
   return (
