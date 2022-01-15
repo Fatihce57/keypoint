@@ -1,5 +1,9 @@
 .movies{
 .card-body{
     overflow: auto;
+    .text-dark{
+        text-decoration: none;
+        font-weight: bold;
+    }
 }
 }

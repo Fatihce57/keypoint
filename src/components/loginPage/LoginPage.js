@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+import {Button,Form} from "react-bootstrap";
 import "./_LoginPage.scss";
 import { Link } from 'react-router-dom'
 
@@ -9,18 +9,17 @@ function LoginPage() {
   const [password, setPassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 5;
+    return email.includes("@") && email.length > 5 && password.length > 5;
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
-    
+    event.preventDefault();    
   }
-//   https://serverless-stack.com/chapters/create-a-login-page.html
+  
   return (
-    <div className="Login d-flex justify-content-center align-items-center" >
-      <Form style={{width: '20vw', height: ''}} onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
+    <div className="Login d-flex justify-content-center mt-5" >
+      <Form style={{width: '20vw' }} onSubmit={handleSubmit} link to={`/search`}>
+        <Form.Group size="lg" >
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
@@ -30,15 +29,15 @@ function LoginPage() {
           />
         </Form.Group>
         <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="mt-3">Password</Form.Label>
           <Form.Control
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="success" size="md" type="submit" disabled={!validateForm()} onclick={handleSubmit}>          
-          <Link to={`/search`} className="desc-button text-dark">Login</Link>
+        <Button variant="success" size="md mt-2" type="submit" disabled={!validateForm()} onclick={handleSubmit}>          
+          <Link to={`/search`} className=" text-light">Login</Link>
         </Button>
       </Form>
     </div>

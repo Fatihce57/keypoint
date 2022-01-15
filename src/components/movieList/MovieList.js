@@ -12,9 +12,6 @@ function MovieList(props) {
         <div>
             
             <Row className="movies d-flex justify-content-center">
-
-
-
                 {movies.map((movie, index) => (
                     <Card className="m-2" key={movie.id} style={{ width: '18rem', height: '40rem' }} >
                         <Card.Img variant="top" src={`${IMG_PATH}` + movie.poster_path} alt={movie.title} />
@@ -25,13 +22,12 @@ function MovieList(props) {
                             </Card.Text>
                         </Card.Body>
                         <Card.Body>
-                            <Button variant="success" style={{ width: '3.1rem', float: 'left', fontSize: '14px' }}>{movie.vote_average}</Button>
+                            <h1 bg="success" style={{ width: '3.1rem', float: 'left', fontSize: '14px' }}>{movie.vote_average}</h1>
                             <Button
-                                variant="warning text-dark" style={{ width: '7rem', float: 'right', fontSize: '14px' }}
+                                variant="warning" style={{ width: '7rem', float: 'right', fontSize: '14px' }}
                                 className="desc-button"
-                                onClick={() => movies(movie)}
-                            >
-                                <Link to={`/description/${movie.id}`} className="desc-button">Descripton</Link>
+                                onClick={() => movies(movie)}                            >
+                                <Link to={`/description/${movie.id}`} className="text-dark">Descripton</Link>
                             </Button>
                         </Card.Body>
                     </Card>

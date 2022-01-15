@@ -8,11 +8,11 @@ const SearchBar = (props) => {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Button variant="outline-danger" className="m-2">
-        <Link to="/">Exit</Link>
+      <Button variant="outline-danger" className="btn-exit">
+        <Link to="/" className="exit">Exit</Link>
       </Button>
-      <Container fluid className="d-flex justify-content-center m-5">
-        <Form className="d-flex" onSubmit={handleOnSubmit}>
+      <Container fluid className="d-flex justify-content-center m-5" onSubmit={handleOnSubmit}>
+        <Form className="d-flex" >
           <FormControl
             type="text"
             placeholder="Search movies..."

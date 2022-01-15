@@ -48,19 +48,18 @@ function App() {
 
   }
 
-
   return (
-    <div className="App">   
-      
+    <div className="App">
+
 
       <Routes>
-        <Route path="/" element={ <LoginPage />} />
-        <Route path="/search" element= {<SearchBar
-        handleOnSubmit={handleOnSubmit}
-        searchMovie={searchMovie}
-        handleOnChange={handleOnChange}
-        addToDescription={addToDescription} />}/>
-        <Route path="/description/:id" element={<MovieDescription movies={movies}/>} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/search" element={<SearchBar
+          handleOnSubmit={handleOnSubmit}
+          searchMovie={searchMovie}
+          handleOnChange={handleOnChange}
+        />} />
+        <Route path="/description/:id" element={<MovieDescription movies={movies} />} />
       </Routes>
       <MovieList movies={movies} />
 
