@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./_LoginPage.scss";
+import { Link } from 'react-router-dom'
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -17,8 +18,8 @@ function LoginPage() {
   }
 //   https://serverless-stack.com/chapters/create-a-login-page.html
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
+    <div className="Login d-flex justify-content-center align-items-center" >
+      <Form style={{width: '20vw', height: ''}} onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -36,8 +37,8 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()} onclick={handleSubmit}>
-          Login
+        <Button variant="success" size="md" type="submit" disabled={!validateForm()} onclick={handleSubmit}>          
+          <Link to={`/search`} className="desc-button text-dark">Login</Link>
         </Button>
       </Form>
     </div>

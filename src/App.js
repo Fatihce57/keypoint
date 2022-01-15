@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './_App.scss';
-// import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MovieList from './components/movieList/MovieList';
 import SearchBar from './components/searchBar/SearchBar';
 import LoginPage from './components/loginPage/LoginPage';
+import MovieDescription from './components/movieList/movieDescription/MovieDescription';
 
 function App() {
 
@@ -49,14 +50,20 @@ function App() {
 
 
   return (
-    <div className="App">
-      <LoginPage/>
-      <SearchBar
-      handleOnSubmit={handleOnSubmit} 
-      searchMovie={searchMovie} 
-      handleOnChange={handleOnChange} 
-      addToDescription={addToDescription} />
+    <div className="App">   
+      
+
+      <Routes>
+        <Route path="/" element={ <LoginPage />} />
+        <Route path="/search" element= {<SearchBar
+        handleOnSubmit={handleOnSubmit}
+        searchMovie={searchMovie}
+        handleOnChange={handleOnChange}
+        addToDescription={addToDescription} />}/>
+        <Route path="/description/:id" element={<MovieDescription movies={movies}/>} />
+      </Routes>
       <MovieList movies={movies} />
+
     </div>
   );
 }
