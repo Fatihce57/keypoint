@@ -18,12 +18,12 @@ function LoginPage() {
   
   return (
     <div className="Login d-flex justify-content-center mt-5" >
-      <Form style={{width: '20vw' }} onSubmit={handleSubmit} link to={`/search`}>
+      <Form style={{width: '20vw' }} onSubmit={handleSubmit}>
         <Form.Group size="lg" >
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
-            type="email"
+            type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -36,7 +36,7 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="success" size="md mt-2" type="submit" disabled={!validateForm()} onclick={handleSubmit}>          
+        <Button variant="success" size="md mt-2" type="text" disabled={!validateForm()}>          
           <Link to={`/search`} className=" text-light">Login</Link>
         </Button>
       </Form>

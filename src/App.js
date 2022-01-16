@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import MovieList from './components/movieList/MovieList';
 import SearchBar from './components/searchBar/SearchBar';
 import LoginPage from './components/loginPage/LoginPage';
-import MovieDescription from './components/movieList/movieDescription/MovieDescription';
+import Description from './components/description/Description';
 
 function App() {
 
@@ -37,21 +37,14 @@ function App() {
       .then((data) => {
         setMovies(data.results)
       })
-
   }
 
   const handleOnChange = (e) => {
     setSearchMovie(e.target.value);
   }
 
-  const addToDescription = (e) => {
-
-  }
-
   return (
     <div className="App">
-
-
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/search" element={<SearchBar
@@ -59,10 +52,9 @@ function App() {
           searchMovie={searchMovie}
           handleOnChange={handleOnChange}
         />} />
-        <Route path="/description/:id" element={<MovieDescription movies={movies} />} />
+        <Route path="/description/:id" element={<Description movies={movies} />} />
       </Routes>
       <MovieList movies={movies} />
-
     </div>
   );
 }

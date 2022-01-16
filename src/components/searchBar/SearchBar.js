@@ -11,8 +11,8 @@ const SearchBar = (props) => {
       <Button variant="outline-danger" className="btn-exit">
         <Link to="/" className="exit">Exit</Link>
       </Button>
-      <Container fluid className="d-flex justify-content-center m-5" onSubmit={handleOnSubmit}>
-        <Form className="d-flex" >
+      <Container fluid className="d-flex justify-content-center m-5" >
+        <Form className="d-flex" onSubmit={handleOnSubmit}>
           <FormControl
             type="text"
             placeholder="Search movies..."
@@ -21,7 +21,7 @@ const SearchBar = (props) => {
             value={searchMovie}
             onChange={handleOnChange}
           />
-          <Button variant="outline-success" onClick={handleOnSubmit}>Search</Button>
+          <Button variant="outline-success" type="text">Search</Button>
         </Form>
       </Container>
     </Navbar>

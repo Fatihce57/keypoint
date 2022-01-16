@@ -7,19 +7,16 @@ function MovieList(props) {
 
     const { movies } = props;
     const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-    console.log(movies)
+
     return (
         <div>
-            
+
             <Row className="movies d-flex justify-content-center">
                 {movies.map((movie, index) => (
-                    <Card className="m-2" key={movie.id} style={{ width: '18rem', height: '40rem' }} >
-                        <Card.Img variant="top" src={`${IMG_PATH}` + movie.poster_path} alt={movie.title} />
+                    <Card className="m-2" key={movie.id} style={{ width: '18rem', height: '30rem' }} >
+                        <Card.Img variant="top" src={`${IMG_PATH}` + movie.poster_path} alt={movie.title} style={{ width: '16rem', height: '20rem' }} />
                         <Card.Body>
-                            <Card.Title>{movie.title}</Card.Title>
-                            <Card.Text style={{ height: '10rem', fontSize: '12px' }}>
-                                {movie.overview}
-                            </Card.Text>
+                            <Card.Title>{movie.title}</Card.Title>                            
                         </Card.Body>
                         <Card.Body>
                             <h1 bg="success" style={{ width: '3.1rem', float: 'left', fontSize: '14px' }}>{movie.vote_average}</h1>
