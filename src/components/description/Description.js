@@ -15,9 +15,9 @@ function Description(props) {
             <Button variant="outline-dark m-5">
                 <Link className="back" to="/search" >Back</Link>
             </Button>
-            {movies.filter((item) => item.id === parseInt(id)).map((item, index) => (
-                <div className="description d-flex justify-content-center m-1">
-                    <Card key={item.id} className="m-5 d-flex justify-content-center" style={{ width: '28rem', height: '50rem' }}>
+            {movies.filter((item) => item.id === parseInt(id)).map((item) => (
+                <div key={item.id} className="description d-flex justify-content-center m-1">
+                    <Card className="m-5 d-flex justify-content-center" style={{ width: '28rem', height: '50rem' }}>
                         <Card.Title className="text-info text-center bg-dark p-2">{item.title}</Card.Title>
                         <Card.Img variant="top" src={`${IMG_PATH}` + item.poster_path} alt={item.title} style={{ maxWidth: '28rem', height: '29rem' }} />
                         <Card.Body>

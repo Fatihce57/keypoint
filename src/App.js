@@ -29,10 +29,10 @@ function App() {
   //   }
   // }
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
 
-    fetch(SEARCH_API + searchMovie)
+    await fetch(SEARCH_API + searchMovie)
       .then(res => res.json())
       .then((data) => {
         setMovies(data.results)
