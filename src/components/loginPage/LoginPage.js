@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Form from "react-bootstrap/Form";
 import {Button,Form} from "react-bootstrap";
 import "./_LoginPage.scss";
 import { Link } from 'react-router-dom'
@@ -18,7 +17,7 @@ function LoginPage() {
   
   return (
     <div className="Login d-flex justify-content-center mt-5" >
-      <Form style={{width: '20vw' }} onSubmit={handleSubmit}>
+      <Form style={{minWidth: '30vw' }} onSubmit={handleSubmit}>
         <Form.Group size="lg" >
           <Form.Label>Email</Form.Label>
           <Form.Control

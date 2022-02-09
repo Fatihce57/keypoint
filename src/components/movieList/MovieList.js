@@ -12,9 +12,9 @@ function MovieList(props) {
         <div>
 
             <Row className="movies d-flex justify-content-center">
-                {movies.map((movie, index) => (
-                    <Card className="m-2" key={movie.id} style={{ width: '18rem', height: '30rem' }} >
-                        <Card.Img variant="top" src={`${IMG_PATH}` + movie.poster_path} alt={movie.title} style={{ width: '16rem', height: '20rem' }} />
+                {movies.map((movie) => (
+                    <Card className="m-2" key={movie.id} style={{ width: '17.5rem', height: '30rem' }} >
+                        <Card.Img variant="top" src={`${IMG_PATH}` + movie.poster_path} alt={movie.title} style={{ width: '100%', height: '70%', marginTop:'0.7rem' }} />
                         <Card.Body>
                             <Card.Title>{movie.title}</Card.Title>                            
                         </Card.Body>

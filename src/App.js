@@ -11,23 +11,23 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [searchMovie, setSearchMovie] = useState('');
 
-  const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=fb610eb829d30acfac99f7dbaa1c937c&page=1'
+  // const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=fb610eb829d30acfac99f7dbaa1c937c&page=1'
   const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=fb610eb829d30acfac99f7dbaa1c937c&query="'
 
-  useEffect(() => {
-    getAllMovies()
-  }, []);
+  // useEffect(() => {
+  //   getAllMovies()
+  // }, []);
 
-  const getAllMovies = async (e) => {
-    e.preventDefault();
-    const res = await fetch(`${API_URL}`);
-    const data = await res.json();
-    try {
-      setMovies((prev) => data.results)
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  // const getAllMovies = async (e) => {
+  //   e.preventDefault();
+  //   const res = await fetch(`${API_URL}`);
+  //   const data = await res.json();
+  //   try {
+  //     setMovies((prev) => data.results)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
